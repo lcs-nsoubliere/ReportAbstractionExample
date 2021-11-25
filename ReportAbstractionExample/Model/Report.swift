@@ -7,14 +7,25 @@
 
 import Foundation
 
-struct Report {
+
+
+//simply a description of the data our app needs to show
+//Report conforms to the identifiable protocol... this just means that we promise to include an "id" property that will contain a unique identifier
+struct Report: Identifiable {
     
+    //this property i an automatically given value
+    //the = is an assigment
+    let id = UUID()
+    
+    
+    //these properties need an argument
     let name: String
     let grade: Int
     let comment: String
     
 }
-
+//storing the data that wont change - the data we want to display
+//a list of the differnt instances
 let listOfReports = [
     Report(name: "Bethany Barr",
            grade: 50,
